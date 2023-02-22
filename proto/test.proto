@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package main;
+
+option go_package = ".";
+
+service TestApi {
+    rpc Echo (EchoRequest) returns (EchoRequest) {}
+    rpc getUser (UserRequest) returns (UserResponse) {}
+}
+
+message EchoRequest {
+    string message = 1;
+}
+
+message UserRequest {
+    string id = 1;
+}
+
+message UserResponse {
+    string name = 2;
+}
